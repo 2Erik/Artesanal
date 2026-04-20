@@ -9,6 +9,8 @@ public class Maquina {
 	private String codigo;
 	
 	//CONSTRUCTORES
+	public Maquina() {}
+	
 	public Maquina(String nombreCerveza, String descripcion, double precioPorMl, double capacidadMaxima, String codigo) {
 		this.nombreCerveza = nombreCerveza;
 		this.descripcion = descripcion;
