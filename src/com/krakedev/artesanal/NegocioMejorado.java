@@ -107,5 +107,15 @@ public class NegocioMejorado {
 		Cliente cliente = buscarClientePorCodigo(codigo);
 		cliente.setTotalConsumido(valor+cliente.getTotalConsumido());
 	}
+	
+	//METODO CONSULTAR VALOR VENDIDO
+	public double consultarValorVendido() {
+		double valorTotal = 0;
+		for(int i=0;i<clientes.size();i++) {
+			valorTotal = clientes.get(i).getTotalConsumido();
+		}
+		return valorTotal;
+	}
+	
 
 }
