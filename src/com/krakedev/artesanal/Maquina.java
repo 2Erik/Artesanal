@@ -82,6 +82,7 @@ public class Maquina {
 		this.cantidadActual = this.capacidadMaxima - 200;
 	}
 	
+	//METODO RECARGAR CERVEZA
 	public boolean recargarCerveza(double cantidad) {
 		double limitePermitido;
 		limitePermitido = capacidadMaxima - 200;
@@ -94,7 +95,7 @@ public class Maquina {
 		}
 	}
 	
-	//METODO PRECIO CALCULADO
+	//METODO SERVIR CERVEZA
 	public double servirCerveza(double cantidad) {
 		if(cantidadActual >= cantidad) {
 			cantidadActual -= cantidad;

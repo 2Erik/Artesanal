@@ -87,5 +87,14 @@ public class NegocioMejorado {
 		}
 		return null;
 	}
+	
+	//METODO CONSUMIR CERVEZA
+	public void consumirCerveza(int codigoCliente, String codigoMaquina, double cantidad) {
+		Maquina maquina = recuperarMaquina(codigoMaquina);
+		Cliente cliente = buscarClientePorCodigo(codigoCliente);
+		
+		double resultado = maquina.servirCerveza(cantidad);
+		
+	}
 
 }
