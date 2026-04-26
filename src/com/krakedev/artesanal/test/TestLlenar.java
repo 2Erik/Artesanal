@@ -22,6 +22,12 @@ public class TestLlenar {
 		System.out.println("-------------------");
 		
 		negra.imprimir();
+		System.out.println("------------------------");
+		
+		Maquina maquina = new Maquina("Rica", "Mas fria", 0.04, "C770");
+		
+		maquina.llenarMaquina();
+		maquina.imprimir();
 	}
 
 }

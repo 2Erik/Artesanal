@@ -30,6 +30,11 @@ public class TetsServir {
 		valor = rubia.servirCerveza(6000);
 		rubia.imprimir();
 		System.out.println("Valor a pagar: "+valor);
+		
+		System.out.println("--------Servir 1000 ml----------");
+		valor = rubia.servirCerveza(1000);
+		rubia.imprimir();
+		System.out.println("Valor a pagar: "+valor);
 	}
 
 }

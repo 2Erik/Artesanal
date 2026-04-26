@@ -14,9 +14,9 @@ public class TestNegocio {
 		System.out.println("Nombre: "+negocio1.getNombre());
 		System.out.println("Maquina: "+negocio1.getMaquina());
 		
-		Maquina maquina1 = negocio1.getMaquina();
+		//-Maquina maquina1 = negocio1.getMaquina();
 		//Intento acceder a su atributo pero este esta en null
-		double capacidad = maquina1.getCapacidadMaxima();
+		//-double capacidad = maquina1.getCapacidadMaxima();
 	}
 
 }
