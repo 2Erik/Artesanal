@@ -6,14 +6,14 @@ public class NegocioMejorado {
 	private ArrayList<Maquina> maquinas;
 	private ArrayList<Cliente> clientes;
 	private int ultimoCodigo = 100;
-	
-	//CONSTRUCTOR
+
+	// CONSTRUCTOR
 	public NegocioMejorado() {
 		maquinas = new ArrayList<Maquina>();
 		clientes = new ArrayList<Cliente>();
 	}
-	
-	//SETTERS AND GETTERS
+
+	// SETTERS AND GETTERS
 	public ArrayList<Maquina> getMaquinas() {
 		return maquinas;
 	}
@@ -21,61 +21,71 @@ public class NegocioMejorado {
 	public void setMaquinas(ArrayList<Maquina> maquinas) {
 		this.maquinas = maquinas;
 	}
-	
-	//METODO GENERAR CODIGO
+
+	// METODO GENERAR CODIGO
 	public String generarCodigo() {
-		int numero = (int) (Math.random()*100)+1;
-		return "M-"+numero;
+		int numero = (int) (Math.random() * 100) + 1;
+		return "M-" + numero;
 	}
-	
-	//METODO AGREGAR MAQUINA
+
+	// METODO AGREGAR MAQUINA
 	public boolean agregarMaquina(String nombre, String descripcion, double precioPorML) {
 		String codigo = generarCodigo();
-		
+
 		Maquina maquinaRecuperada = recuperarMaquina(codigo);
-		
-		if(maquinaRecuperada == null) {
+
+		if (maquinaRecuperada == null) {
 			Maquina maquina = new Maquina(nombre, descripcion, precioPorML, codigo);
 			maquinas.add(maquina);
 			return true;
 		}
-		
+
 		return false;
 	}
-	
-	//METODO CARAGAR MAQUINAS
+
+	// METODO CARAGAR MAQUINAS
 	public void cargarMaquinas() {
-		for(int i=0; i<maquinas.size();i++) {
+		for (int i = 0; i < maquinas.size(); i++) {
 			maquinas.get(i).llenarMaquina();
 		}
 	}
-	
-	//METODO RECUPERAR MAQUINAS
+
+	// METODO RECUPERAR MAQUINAS
 	public Maquina recuperarMaquina(String codigo) {
-		for(int i = 0; i<maquinas.size();i++) {
+		for (int i = 0; i < maquinas.size(); i++) {
 			if (maquinas.get(i).getCodigo().equals(codigo)) {
 				return maquinas.get(i);
 			}
 		}
 		return null;
 	}
-	
-	//METODO REGISTRAR CLIENTE
+
+	// METODO REGISTRAR CLIENTE
 	public void registrarCliente(String nombre, String cedula) {
 		Cliente cliente = new Cliente(nombre, cedula);
 		cliente.setCodigo(ultimoCodigo);
 		ultimoCodigo++;
 		clientes.add(cliente);
 	}
-	
-	//METODO BUSCAR CLIENTE
+
+	// METODO BUSCAR CLIENTE
 	public Cliente buscarClientePorCedula(String cedula) {
-		for(int i=0;i<clientes.size();i++) {
-			if(clientes.get(i).getCedula().equals(cedula)) {
+		for (int i = 0; i < clientes.size(); i++) {
+			if (clientes.get(i).getCedula().equals(cedula)) {
 				return clientes.get(i);
 			}
 		}
 		return null;
 	}
-	
+
+	// METODO BUSCAR CLIENTE
+	public Cliente buscarClientePorCodigo(int codigo) {
+		for (int i = 0; i < clientes.size(); i++) {
+			if (clientes.get(i).getCodigo() == codigo) {
+				return clientes.get(i);
+			}
+		}
+		return null;
+	}
+
 }
