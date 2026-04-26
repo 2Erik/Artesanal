@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class NegocioMejorado {
 	private ArrayList<Maquina> maquinas;
+	private ArrayList<Cliente> clientes;
+	private int ultimoCodigo = 100;
 	
 	//CONSTRUCTOR
 	public NegocioMejorado() {
@@ -55,6 +57,14 @@ public class NegocioMejorado {
 			}
 		}
 		return null;
+	}
+	
+	//METODO REGISTRAR CLIENTE
+	public void registrarCliente(String nombre, String cedula) {
+		Cliente cliente = new Cliente(nombre, cedula);
+		cliente.setCodigo(ultimoCodigo);
+		ultimoCodigo++;
+		clientes.add(cliente);
 	}
 	
 }

@@ -6,11 +6,13 @@ public class Cliente {
 	private int codigo;
 	private double totalConsumido;
 	
+	//CONSTRUCTOR
 	public Cliente(String nombre, String cedula) {
 		this.nombre = nombre;
 		this.cedula = cedula;
 	}
 	
+	//GETTERS AND SETTERS
 	public String getNombre() {
 		return nombre;
 	}
