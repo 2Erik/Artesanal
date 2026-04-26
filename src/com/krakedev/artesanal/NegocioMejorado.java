@@ -10,6 +10,7 @@ public class NegocioMejorado {
 	//CONSTRUCTOR
 	public NegocioMejorado() {
 		maquinas = new ArrayList<Maquina>();
+		clientes = new ArrayList<Cliente>();
 	}
 	
 	//SETTERS AND GETTERS
@@ -65,6 +66,16 @@ public class NegocioMejorado {
 		cliente.setCodigo(ultimoCodigo);
 		ultimoCodigo++;
 		clientes.add(cliente);
+	}
+	
+	//METODO BUSCAR CLIENTE
+	public Cliente buscarClientePorCedula(String cedula) {
+		for(int i=0;i<clientes.size();i++) {
+			if(clientes.get(i).getCedula().equals(cedula)) {
+				return clientes.get(i);
+			}
+		}
+		return null;
 	}
 	
 }
