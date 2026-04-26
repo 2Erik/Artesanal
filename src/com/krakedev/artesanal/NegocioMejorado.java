@@ -21,17 +21,23 @@ public class NegocioMejorado {
 	
 	//METODO GENERAR CODIGO
 	public String generarCodigo() {
-		int numero = (int) Math.random()*100;
+		int numero = (int) (Math.random()*100)+1;
 		return "M-"+numero;
 	}
 	
 	//METODO AGREGAR MAQUINA
-	public void agregarMaquina(String nombre, String descripcion, double precioPorML) {
+	public boolean agregarMaquina(String nombre, String descripcion, double precioPorML) {
 		String codigo = generarCodigo();
 		
-		Maquina maquina = new Maquina(nombre, descripcion, precioPorML, codigo);
+		Maquina maquinaRecuperada = recuperarMaquina(codigo);
 		
-		maquinas.add(maquina);
+		if(maquinaRecuperada == null) {
+			Maquina maquina = new Maquina(nombre, descripcion, precioPorML, codigo);
+			maquinas.add(maquina);
+			return true;
+		}
+		
+		return false;
 	}
 	
 	//METODO CARAGAR MAQUINAS
