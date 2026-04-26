@@ -4,7 +4,7 @@ public class Cliente {
 	private String nombre;
 	private String cedula;
 	private int codigo;
-	private double totalConsumido;
+	private double totalConsumido = 0;
 	
 	//CONSTRUCTOR
 	public Cliente(String nombre, String cedula) {
